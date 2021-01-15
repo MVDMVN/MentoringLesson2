@@ -21,3 +21,19 @@ body {
   font-family: 'Roboto';
   src: local('../public/fonts/Roboto-Bold.ttf')
 }
+
+.app {
+  &-container {
+    display: flex;
+    justify-content:space-between;
+    padding-top: 60px;
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .card {
+    max-width: 350px;
+    width: 100%;
+  }
+}
