@@ -24,16 +24,28 @@ body {
 
 .app {
   &-container {
-    display: flex;
-    justify-content:space-between;
     padding-top: 60px;
     max-width: 1600px;
     width: 100%;
     margin: 0 auto;
-  }
 
-  .card {
-    max-width: 350px;
-    width: 100%;
+    .input-container {
+      max-width: 450px;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .cards-container {
+      display: flex;
+      justify-content:space-between;
+      max-width: 1600px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .card {
+      max-width: 390px;
+      width: 100%;
+    }
   }
 }
