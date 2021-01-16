@@ -31,7 +31,7 @@ function App() {
         if (!response.data.length) {
           setAllUsersDownloaded(true);
         } else {
-          setUserInfo(userInfo.concat(response.data));
+          setUserInfo((userInfo) => [...userInfo, ...response.data]);
         }
       })
       .finally(() => {
@@ -44,7 +44,7 @@ function App() {
       <div className="app-container">
         <input
           type="text"
-          placeholder="Поиск пользователя..."
+          placeholder="User search..."
           value={searchValue}
           onChange={(e) => {
             setSearchValue(e.target.value);
@@ -52,10 +52,10 @@ function App() {
         />
         <ul className="users">
           {userInfo
-            .filter(
-              (info) =>
-                info.name.toLowerCase().includes(searchValue.toLowerCase()) ||
-                info.email.toLowerCase().includes(searchValue.toLowerCase())
+            .filter((info) =>
+              (info.name + "" + info.email)
+                .toLowerCase()
+                .includes(searchValue.toLowerCase())
             )
             .map((user) => (
               <UserCard key={user.id} name={user.name} email={user.email} />
