@@ -28,8 +28,9 @@ function App() {
                   .toLowerCase()
                   .includes(searchValue.toLowerCase())
             )
-            .map((item, index) => (
+            .map((item) => (
               <CardItem
+                key={item.title + "" + item.desc}
                 title={item.title}
                 description={item.description}
                 image={item.image}
